@@ -20,7 +20,7 @@ defmodule SpotMe.MixProject do
   def application do
     [
       mod: {SpotMe.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :spotify_ex]
     ]
   end
 
@@ -33,7 +33,7 @@ defmodule SpotMe.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:httpoison, "~> 1.6"},
+      {:httpoison, "~> 1.6", override: true},
       {:phoenix, "~> 1.4.12"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
@@ -43,7 +43,8 @@ defmodule SpotMe.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:spotify_ex, "~> 2.0.9"}
     ]
   end
 

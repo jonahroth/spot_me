@@ -4,4 +4,8 @@ defmodule SpotMeWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def callback(conn, _params) do
+    render(conn, "index.html")
+  end
 end
