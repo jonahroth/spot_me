@@ -34,3 +34,5 @@ npm-debug.log
 /priv/static/
 
 spot_me.code-workspace
+
+**/*.secret.exs
