@@ -52,16 +52,16 @@ defmodule SpotMe.Spotify do
     Enum.map(features["audio_features"], fn feature -> Map.merge(feature, %{name: tracks[feature["id"]]}) end)
   end
 
-  def danceability(id \\ @test_playlist) do
+  def by_attr(id \\ @test_playlist, attr \\ "danceability") do
     id
     |> playlist_features
     |> Enum.map(fn feature -> 
       %{
-        name: feature.name,
-        danceability: feature["danceability"]
+        :name => feature.name,
+        attr => feature[attr]
       }
     end)
-    |> Enum.sort(fn song1, song2 -> song1.danceability >= song2.danceability end)
+    |> Enum.sort(fn song1, song2 -> song1[attr] >= song2[attr] end)
   end
 
   def bearer_auth do
